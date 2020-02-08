@@ -25,6 +25,9 @@ option(LIBIGL_WITH_PYTHON            "Use Python"         OFF)
 find_package(LIBIGL REQUIRED QUIET)
 find_package(GLUT REQUIRED)
 
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}")
+SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS}  -lglut -lGLU -lGL -lGLEW")
+
 include_directories( ${GLUT_INCLUDE_DIRS} )
 add_executable(${PROJECT_NAME} "example.cpp" "clean.cpp" "robust_bbw.cpp")
 target_link_libraries(${PROJECT_NAME} 
